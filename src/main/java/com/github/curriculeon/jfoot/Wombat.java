@@ -36,5 +36,37 @@ public class Wombat extends Herbivore {
         } else {
             this.setDirection(EAST);
         }
+
+    }
+    public void turnRight() {
+        if (this.getDirection() == WEST) {
+            this.setDirection(SOUTH);
+        } else if (this.getDirection() == EAST) {
+            this.setDirection(SOUTH);
+        } else if (this.getDirection() == SOUTH) {
+            this.setDirection(WEST);
+        } else {
+            this.setDirection(WEST);
+        }
+
+    }
+    //Wombat needs to know if and when it's at the right edge
+    public boolean atRightEdge(){
+        if (getDirection().equals(EAST) && !canMove()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    // Wombat need to know if and when its at left edge
+    public boolean atLeftEdge(){
+        if (getDirection().equals(WEST) && !canMove()); {
+            return true;
+        } else
+        return false;
+
     }
 }
+
+
+
