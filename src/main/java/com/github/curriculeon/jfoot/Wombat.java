@@ -24,7 +24,38 @@ public class Wombat extends Herbivore {
         } else {
             this.turnLeft();
         }
+        if (atRightEdge()) {
+            this.turnLeft();
+            if (this.foundLeaf()) {
+                this.eatLeaf();
+
+            } else if (this.canMove()) {
+                this.move();
+            }
+            if (this.canMove())
+                this.turnLeft();
+        } else if  (this.foundLeaf()){
+            this.eatLeaf();
+        }
+
+        if (atLeftEdge()) {
+            this.turnRight();
+            if (this.foundLeaf()) {
+                this.eatLeaf();
+
+            } else if (this.canMove())
+            this.move();{
+            }
+            if (this.canMove())
+                this.turnRight();
+        } else if (this.foundLeaf()) {
+            this.eatLeaf();
+        }
+
+
     }
+
+
 
     public void turnLeft() {
         if (this.getDirection() == EAST) {
@@ -66,6 +97,7 @@ public class Wombat extends Herbivore {
             return false;
         }
     }
+
 }
 
 
