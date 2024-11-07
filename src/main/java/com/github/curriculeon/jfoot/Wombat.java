@@ -60,11 +60,11 @@ public class Wombat extends Herbivore {
     }
     // Wombat need to know if and when its at left edge
     public boolean atLeftEdge(){
-        if (getDirection().equals(WEST) && !canMove()); {
+        if (getDirection().equals(WEST) && !canMove()) {
             return true;
-        } else
-        return false;
-
+        } else {
+            return false;
+        }
     }
 }
 
