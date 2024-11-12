@@ -21,38 +21,21 @@ public class Wombat extends Herbivore {
             this.eatLeaf();
         } else if (this.canMove()) {
             this.move();
-        } else {
-            this.turnLeft();
         }
-        if (atRightEdge()) {
+
+         if (atRightEdge()) {
             this.turnLeft();
             if (this.foundLeaf()) {
                 this.eatLeaf();
-
-            } else if (this.canMove()) {
-                this.move();
             }
-            if (this.canMove())
-                this.turnLeft();
-        } else if  (this.foundLeaf()){
-            this.eatLeaf();
-        }
 
         if (atLeftEdge()) {
             this.turnRight();
             if (this.foundLeaf()) {
                 this.eatLeaf();
-
-            } else if (this.canMove())
-            this.move();{
             }
-            if (this.canMove())
-                this.turnRight();
-        } else if (this.foundLeaf()) {
-            this.eatLeaf();
         }
-
-
+         }
     }
 
 
